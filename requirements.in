@@ -1,0 +1,8 @@
+stqdm
+pandas
+plotly
+streamlit
+scikit-learn
+sentence-transformers
+extra-streamlit-components
+nltk
