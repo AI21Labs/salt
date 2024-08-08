@@ -10,7 +10,7 @@ We welcome contributions to SALT. Please read the following guidelines before su
 
 ## Reporting issues
 
-Go to this repository's [issues page](https://github.com/AI21Labs/ai21-python/issues) and click on the "New Issue" button.
+Go to this repository's [issues page](https://github.com/AI21Labs/salt/issues) and click on the "New Issue" button.
 
 
 Include the following information in your post:
