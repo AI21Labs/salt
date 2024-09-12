@@ -14,7 +14,6 @@ QUERY_FILTER_KEY = "query_filter"
 USE_SEMANTICS_FILTER_KEY = "use_semantics"
 USE_REGEX_FILTER_KEY = "use_regex"
 
-
 SINGLE_LABEL = "Single-label 📎️"
 MULTI_LABEL = "Multi-label 🖇️️"
 

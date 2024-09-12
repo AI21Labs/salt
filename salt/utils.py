@@ -12,4 +12,4 @@ def read_csv_or_jsonl(path: str) -> pd.DataFrame:
     if file_type == "jsonl":
         return pd.read_json(path, lines=True)
 
-    return NotImplementedError("Only CSV and JSONL file types are supported.")
+    raise NotImplementedError("Only CSV and JSONL file types are supported.")
