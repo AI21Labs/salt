@@ -2,13 +2,14 @@
 # scikit-learn==1.3.2
 # sentence-transformers==2.2.2
 
+import nltk
 import pickle
 import numpy as np
 from tqdm.auto import tqdm
-from nltk import sent_tokenize
 from sklearn.linear_model import LogisticRegression
 from sentence_transformers import SentenceTransformer
 
+nltk.download('punkt')
 
 def load_model(path: str) -> LogisticRegression:
     with open(path, "rb") as f:
@@ -16,7 +17,7 @@ def load_model(path: str) -> LogisticRegression:
 
 
 def vectorize(text: str, model: SentenceTransformer) -> np.array:
-    sentences = sent_tokenize(text)
+    sentences = nltk.sent_tokenize(text)
     sentences_embeddings = model.encode(sentences)
     return sentences_embeddings.mean(axis=0)
 

@@ -1,3 +1,4 @@
+import nltk
 import pickle
 import numpy as np
 import pandas as pd
@@ -7,9 +8,9 @@ from pathlib import Path
 from itertools import chain
 from typing import Dict, List
 from salt.constants import NA
-from nltk import sent_tokenize
 from sentence_transformers import SentenceTransformer
 
+nltk.download('punkt')
 
 TEXTS_KEY = "texts"
 VECTORS_KEY = "vectors"
@@ -42,7 +43,7 @@ def get_relevant_texts(texts: list[str]) -> list[str]:
 
 def embed_texts(texts: List[str]) -> List[List[float]]:
     model = get_model(MODEL_NAME)
-    texts_sentences = [sent_tokenize(text) for text in texts]
+    texts_sentences = [nltk.sent_tokenize(text) for text in texts]
     texts_lengths = [len(sentences) for sentences in texts_sentences]
     all_sentences = list(chain.from_iterable(texts_sentences))
     if len(all_sentences) <= BATCH_SIZE:
